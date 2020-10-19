@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/servermain.cpp
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+errno.h
+-
+string.h
+-
+netdb.h
+-
+sys/types.h
+-
+netinet/in.h
+-
+sys/socket.h
+-
+arpa/inet.h
+-
+sys/wait.h
+-
+signal.h
+-
+string
+-
+iostream
+-
+

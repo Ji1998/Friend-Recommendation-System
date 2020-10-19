@@ -1,0 +1,15 @@
+//10/07/2020
+module functions:
+clientA : client 1 , TCP connection with main server
+mainserver: TCP connection with client, UDP connnection with backend-serverA
+backend-serverA: UDP connection with mainserver
+UDPclient: a UDP client for testing purporse of backend-serverA
+what it can:
+By far servermain can receive user typed string in commmand line through TCP, then send the string through UDP to backend-serverA,
+then backend-serverA is able to print out the string.
+next step:
+enable backend-server-A to send string back to mainserver through UDP, then mainserver have to send the string back to client through TCP
+some issues:
+deal with char [] and string conversion
+
+
