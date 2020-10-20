@@ -24,7 +24,7 @@
 #include <set>
 #include<queue>
 
-#define UDPPORTA "30031"
+#define UDPPORTA "31031"
 #define MAXBUFLEN 1000
 #define HOST "localhost"
 
@@ -92,11 +92,11 @@ int main()
         return 2;
     }
     freeaddrinfo(serverinfo);
-    cout << "The Server A is up and running using UDP on port 30031" << endl;
+    cout << "The Server B is up and running using UDP on port 30031" << endl;
 
 
     //read file
-    ifstream myfile("data1.txt");
+    ifstream myfile("data2.txt");
     if (myfile.is_open())
     {
         while (getline(myfile, line)) {
@@ -148,7 +148,7 @@ int main()
             char sendCountryList [n+1];
             strcpy(sendCountryList, replyCountryList.c_str());                                  //replyList:countryA+countryB+countryC+
             sendto(sockfd, sendCountryList, sizeof sendCountryList, 0, (struct sockaddr *) &their_addr, addr_len);
-            cout << "The Server A has sent a country list to Main Server" << endl;
+            cout << "The Server B has sent a country list to Main Server" << endl;
         }
         else if(receivedProtocol == "query")                                                    //query:country_name+id
         {
@@ -158,13 +158,13 @@ int main()
             string countryName = afterReceived.substr(0, seperator);                       //country_name
             //cout << afterReceived.substr(seperator+1) << endl;
             int idForQuery = stoi(afterReceived.substr(seperator+1));                 //id
-            cout << "The server A has received request for finding possible frineds of User: " << idForQuery << " in " << countryName << endl;
-            cout << "The server A is searching possible frineds for User: " << idForQuery << endl;
+            cout << "The server B has received request for finding possible frineds of User: " << idForQuery << " in " << countryName << endl;
+            cout << "The server B is searching possible frineds for User: " << idForQuery << endl;
             int friendID = recommendation(idForQuery, countryName, countryDict);
             if(friendID == -1)
             {
                 replyFriendInfo += "no_id";                                      //replyFriendInfo:no_id
-                cout << "The server A has sent<" << idForQuery << ">" << "not found to Main Server" << endl;
+                cout << "The server B has sent<" << idForQuery << ">" << "not found to Main Server" << endl;
             }
             else if(friendID == -2) replyFriendInfo += "no_country";
             else replyFriendInfo += to_string(friendID);
@@ -173,7 +173,7 @@ int main()
             strcpy(sendreplyFrinedInfo, replyFriendInfo.c_str());
             sendto(sockfd, sendreplyFrinedInfo, sizeof sendreplyFrinedInfo, 0, (struct sockaddr *) &their_addr, addr_len);
             cout << "Here are the results: " << friendID << endl;
-            cout << "The server A has sent the results to Main Server" << endl;
+            cout << "The server B has sent the results to Main Server" << endl;
         }
 
     }

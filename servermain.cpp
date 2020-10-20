@@ -113,40 +113,44 @@ int main()
     if (sigaction(SIGCHLD, &sa, NULL) == -1) {
         perror("sigaction");
         exit(1); }
-    printf( "The main server is up and running \n");
+    cout <<  "The main server is up and running " << endl;
 
     //load balancing
 
     char countrylist[] = "countryList:";                                                                        //send countryList: to backend server
     size_t countylist_requst_size = sizeof(countrylist);
     string countryA = reconmendation(countrylist, 'A',countylist_requst_size);
-    //string countryB = reconmendation(countrylist, 'B',countylist_requst_size);
+    string countryB = reconmendation(countrylist, 'B',countylist_requst_size);
     auto seperatorList = countryA.find(":");
     string listBeforeSep_A = countryA.substr(seperatorList+1);
-    //string listBeforeSep_B = countryB.substr(seperatorList+1);
+    string listBeforeSep_B = countryB.substr(seperatorList+1);
     string delimiter = "+";
     size_t posA = 0;
     size_t posB = 0;
 
     string tokenA;
+    cout << "The main server has received the country list from server A using UDP over port 30031" << endl;
     while ((posA = listBeforeSep_A.find(delimiter)) != string::npos) {
         tokenA = listBeforeSep_A.substr(0, posA);
         countrysetA.insert(tokenA);
         listBeforeSep_A.erase(0, posA + delimiter.length());
     }
 
-//    string tokenB;
-//    while ((posB = listBeforeSep_B.find(delimiter)) != string::npos) {
-//        tokenB = listBeforeSep_B.substr(0, posB);
-//        countrysetB.insert(tokenB);
-//        listBeforeSep_A.erase(0, posB + delimiter.length());
-//    }
-    cout << "A contains: ";
+    string tokenB;
+    while ((posB = listBeforeSep_B.find(delimiter)) != string::npos) {
+        tokenB = listBeforeSep_B.substr(0, posB);
+        countrysetB.insert(tokenB);
+        listBeforeSep_B.erase(0, posB + delimiter.length());
+    }
+    cout << "server A contains: ";
     for(auto a : countrysetA) cout << a << " ";
     cout << endl;
-    cout << "B contains: ";
+    cout << "server B contains: ";
     for(auto b : countrysetB) cout << b << " ";
     cout << endl;
+
+
+
 
     //accpet() new client
     sin_size = sizeof their_addr;
@@ -157,7 +161,6 @@ int main()
         return 1;
     }
     inet_ntop(their_addr.ss_family, get_in_addr((struct sockaddr *)&their_addr), s, sizeof s);
-    printf("server: got connection from %s\n", s);
     struct sockaddr_in clientInfo;                   //a struct saves the information of the other side
     memset(&clientInfo, 0, sizeof(clientInfo));
     int len = sizeof(clientInfo);
@@ -170,26 +173,43 @@ int main()
         //receive data from the client and process it to grab country name
         char clientData [1000];
         memset(clientData, 0, sizeof(clientData));
-        cout << clientData << " :clientData before recv" << endl;
         recv(new_fd, clientData, sizeof (clientData), 0);
         //size_t clientDataSize = sizeof clientData / sizeof (char);
-        string clientDataStr = clientData;                                                                          //cast char array sent by client to string
+        string clientDataStr_cliendid = clientData;
+        auto clientid_sep = clientDataStr_cliendid.find("=");
+        string clientID = clientDataStr_cliendid.substr(0, clientid_sep);
+        string clientDataStr = clientDataStr_cliendid.substr(clientid_sep+1);                                 //cast char array sent by client to string
         auto colonSperator = clientDataStr.find(":");                                                           //query:country_name+id;
         string afterQuery = clientDataStr.substr(colonSperator+1);                                             //country_name+id;
         auto plusSeprator = afterQuery.find("+");
         string countryQuery = afterQuery.substr(0,plusSeprator);                                                //country_name
-        if(countrysetA.count(countryQuery)) serverChoice = 'A';
-        else if(countrysetB.count(countryQuery)) serverChoice = 'B';
+        string useridQueery = afterQuery.substr(plusSeprator+1);                                                //id
+        cout << "The Main server has received the request on User: " << useridQueery << " in " << countryQuery << endl;
+        if(countrysetA.count(countryQuery))
+        {
+            serverChoice = 'A';
+            cout << "country name" << countryQuery << " show up in server A" << endl;
+        }
+        else if(countrysetB.count(countryQuery))
+        {
+            serverChoice = 'B';
+            cout << "country name" << countryQuery << " show up in server B" << endl;
+        }
         else {
-            string noCountryReply = countryQuery + " not found ";
+            string noCountryReply = "replyFriendInfo:not_country";
+            cout << "Country name doesn't show up" << endl;
+            cout << "the main server has sent " << countryQuery << " :NOT FOUND" << " to " << clientID << " using TCP over port 33031" << endl;
             send(new_fd, noCountryReply.c_str(),noCountryReply.length(),0);
             continue;
         }
-        cout << clientData << " :clientData" << endl;
+        if(clientID == "client1")
+            cout << "The main server has received the request on User " << useridQueery << " in " << countryQuery << " from client1 using TCP over port 33031 " << endl;
+        if(clientID == "client2")
+            cout << "The main server has received the request on User " << useridQueery << " in " << countryQuery << " from client2 using TCP over port 33031 " << endl;
 
         //do the recommendation
-        string resultA = reconmendation(clientData,serverChoice, sizeof(clientData));
-        cout << resultA <<" :resultA" << endl;
+        cout << "The main server has sent request from " << useridQueery << " to server " << serverChoice << " USING UDP over port 32031" << endl;
+        string resultA = reconmendation(clientData+clientid_sep+1,serverChoice, sizeof(clientData));
         auto it = resultA.find(":");
         string protocol = resultA.substr(0, it);
         string messageAfterProtocol = resultA.substr(it+1);
@@ -207,12 +227,22 @@ int main()
 //        }
         if(protocol == "replyFriendInfo")
         {
-            cout << resultA.c_str() << " :resultA.c_str()" << endl;
 
-            cout << send(new_fd, resultA.c_str(), resultA.length(), 0) << endl;
+            send(new_fd, resultA.c_str(), resultA.length(), 0);
+            string resultStr = resultA;
+            auto seperator = resultStr.find(":");                                                           //replyFriendInfo:625 not_country no_id
+            auto afterSeprator = resultStr.substr(seperator+1);
+            if(afterSeprator == "no_id")
+            {
+                cout << "The main server has received " << useridQueery << " not found " << "from server" << serverChoice << endl;
+                cout << "The main server has sent the error to client using TCP over 32031" << endl;
+            }
+            else
+            {
+                cout << "The main server has sent the searching results to client using TCP over 32031" << endl;
+            }
+
         }
-        cout << "mainserver has send the data to client"<<endl;
-
         //send hello world to the client
 //        if (!fork()) { // this is the child process close(sockfd);
 //           close(sockfd); // child doesn't need listener
@@ -238,7 +268,6 @@ string reconmendation(char dataIn[], char ch, size_t dataInSize)
     if(ch == 'A')  backendServerPort = PORTA;
     else if(ch == 'B') backendServerPort = PORTB;
 
-    cout <<backendServerPort << endl;
     //setup UDP
     memset(&hints, 0, sizeof hints);
     hints.ai_family = AF_UNSPEC;
@@ -261,13 +290,11 @@ string reconmendation(char dataIn[], char ch, size_t dataInSize)
         fprintf(stderr, "talker: failed to bind socket\n");
         exit(2);
     }
-    cout <<  dataInSize << endl;
-    cout << sendto(UDPsock, dataIn, dataInSize, 0, p->ai_addr, p->ai_addrlen) << endl;
+    sendto(UDPsock, dataIn, dataInSize, 0, p->ai_addr, p->ai_addrlen);
     char result[1000];
     memset(result, 0, sizeof(result));
     addr_len = sizeof their_addr;
     recvfrom(UDPsock, result, sizeof result, 0, (struct sockaddr *) &their_addr, &addr_len);
-    cout << result << endl;
     return result;
 }
 string convertToString(char* a, int size)

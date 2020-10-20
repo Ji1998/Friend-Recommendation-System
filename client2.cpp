@@ -72,7 +72,7 @@ int main(int argc, char* argv[])        //argc: number of argvs; argv: vector of
     }
     inet_ntop(p->ai_family, get_in_addr((struct sockaddr *)p->ai_addr),
               s, sizeof s);
-     printf("client is up and connecting to %s\n", s);
+     cout << "Clinet is up and running" << endl;
     freeaddrinfo(servinfo); // all done with this structure
 
     //send data to mainserver
@@ -85,16 +85,26 @@ int main(int argc, char* argv[])        //argc: number of argvs; argv: vector of
         cin >> inputName;
         cout << "please enter your country name: " << endl;
         cin >> inputContry;
-        string protocol = "query:";
+        string protocol = "client2=query:";
         string sendMessage = protocol + inputContry + "+" + inputName;
-        cout << sendMessage << " :sendMessage" << endl;
         //char sendBuf[100] = "query:jZbO+108";
         // cout << sendBuf << endl;
         send(sockfd, sendMessage.c_str(), sendMessage.length(), 0);
+        cout << "Client1 has sent " << inputName << " and " << inputContry << " to main server using TCP" << endl;
         char result[1000];
         memset(result, 0, sizeof(result));
         recv(sockfd, result, sizeof result, 0);
-        cout << "client has received " << result << " from main server" << endl;
+        string resultStr = result;
+        auto seperator = resultStr.find(":");                                                           //replyFriendInfo:625 not_country no_id
+        auto afterSeprator = resultStr.substr(seperator+1);
+        if(afterSeprator == "not_country") cout << inputContry << " not found " << endl;
+        else if(afterSeprator == "no_id") cout << "User " << inputName << " not found" << endl;
+        else if(afterSeprator == "no_country") cout << inputContry << " not found" << endl;
+        else
+        {
+            cout << "client2 has received results from Main Server: " << endl;
+            cout << afterSeprator << " is possible friend of " << inputName << " in " << inputContry << endl;
+        }
 
     }
 
