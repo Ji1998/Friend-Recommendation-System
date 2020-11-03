@@ -100,9 +100,10 @@ int main(int argc, char* argv[])        //argc: number of argvs; argv: vector of
         if(afterSeprator == "not_country") cout << inputContry << " not found " << endl;
         else if(afterSeprator == "no_id") cout << "User " << inputName << " not found" << endl;
         else if(afterSeprator == "no_country") cout << inputContry << " not found" << endl;
+        else if(afterSeprator == "no_friend_None") cout << "None is possible frined of " << inputName << " in " << inputContry << endl;
         else
         {
-            cout << "client2 has received results from Main Server: " << endl;
+            cout << "client1 has received results from Main Server: " << endl;
             cout << afterSeprator << " is possible friend of " << inputName << " in " << inputContry << endl;
         }
 

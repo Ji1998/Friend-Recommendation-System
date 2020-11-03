@@ -73,7 +73,11 @@ CMAKE_BINARY_DIR = /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/proje
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/fileReader.dir/all
+all: CMakeFiles/client1.dir/all
+all: CMakeFiles/client2.dir/all
+all: CMakeFiles/servermain.dir/all
+all: CMakeFiles/backendB.dir/all
+all: CMakeFiles/backendA.dir/all
 
 .PHONY : all
 
@@ -83,36 +87,148 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/fileReader.dir/clean
+clean: CMakeFiles/client1.dir/clean
+clean: CMakeFiles/client2.dir/clean
+clean: CMakeFiles/servermain.dir/clean
+clean: CMakeFiles/backendB.dir/clean
+clean: CMakeFiles/backendA.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/fileReader.dir
+# Target rules for target CMakeFiles/client1.dir
 
 # All Build rule for target.
-CMakeFiles/fileReader.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fileReader.dir/build.make CMakeFiles/fileReader.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fileReader.dir/build.make CMakeFiles/fileReader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target fileReader"
-.PHONY : CMakeFiles/fileReader.dir/all
+CMakeFiles/client1.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client1.dir/build.make CMakeFiles/client1.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client1.dir/build.make CMakeFiles/client1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target client1"
+.PHONY : CMakeFiles/client1.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/fileReader.dir/rule: cmake_check_build_system
+CMakeFiles/client1.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/fileReader.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/client1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/fileReader.dir/rule
+.PHONY : CMakeFiles/client1.dir/rule
 
 # Convenience name for target.
-fileReader: CMakeFiles/fileReader.dir/rule
+client1: CMakeFiles/client1.dir/rule
 
-.PHONY : fileReader
+.PHONY : client1
 
 # clean rule for target.
-CMakeFiles/fileReader.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fileReader.dir/build.make CMakeFiles/fileReader.dir/clean
-.PHONY : CMakeFiles/fileReader.dir/clean
+CMakeFiles/client1.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client1.dir/build.make CMakeFiles/client1.dir/clean
+.PHONY : CMakeFiles/client1.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/client2.dir
+
+# All Build rule for target.
+CMakeFiles/client2.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client2.dir/build.make CMakeFiles/client2.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client2.dir/build.make CMakeFiles/client2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target client2"
+.PHONY : CMakeFiles/client2.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/client2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/client2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/client2.dir/rule
+
+# Convenience name for target.
+client2: CMakeFiles/client2.dir/rule
+
+.PHONY : client2
+
+# clean rule for target.
+CMakeFiles/client2.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client2.dir/build.make CMakeFiles/client2.dir/clean
+.PHONY : CMakeFiles/client2.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/servermain.dir
+
+# All Build rule for target.
+CMakeFiles/servermain.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/servermain.dir/build.make CMakeFiles/servermain.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/servermain.dir/build.make CMakeFiles/servermain.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target servermain"
+.PHONY : CMakeFiles/servermain.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/servermain.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/servermain.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/servermain.dir/rule
+
+# Convenience name for target.
+servermain: CMakeFiles/servermain.dir/rule
+
+.PHONY : servermain
+
+# clean rule for target.
+CMakeFiles/servermain.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/servermain.dir/build.make CMakeFiles/servermain.dir/clean
+.PHONY : CMakeFiles/servermain.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/backendB.dir
+
+# All Build rule for target.
+CMakeFiles/backendB.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendB.dir/build.make CMakeFiles/backendB.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendB.dir/build.make CMakeFiles/backendB.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target backendB"
+.PHONY : CMakeFiles/backendB.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/backendB.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/backendB.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/backendB.dir/rule
+
+# Convenience name for target.
+backendB: CMakeFiles/backendB.dir/rule
+
+.PHONY : backendB
+
+# clean rule for target.
+CMakeFiles/backendB.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendB.dir/build.make CMakeFiles/backendB.dir/clean
+.PHONY : CMakeFiles/backendB.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/backendA.dir
+
+# All Build rule for target.
+CMakeFiles/backendA.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendA.dir/build.make CMakeFiles/backendA.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendA.dir/build.make CMakeFiles/backendA.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target backendA"
+.PHONY : CMakeFiles/backendA.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/backendA.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/backendA.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/backendA.dir/rule
+
+# Convenience name for target.
+backendA: CMakeFiles/backendA.dir/rule
+
+.PHONY : backendA
+
+# clean rule for target.
+CMakeFiles/backendA.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendA.dir/build.make CMakeFiles/backendA.dir/clean
+.PHONY : CMakeFiles/backendA.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

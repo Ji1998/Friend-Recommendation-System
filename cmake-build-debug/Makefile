@@ -131,44 +131,204 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named fileReader
+# Target rules for targets named client1
 
 # Build rule for target.
-fileReader: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fileReader
-.PHONY : fileReader
+client1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client1
+.PHONY : client1
 
 # fast build rule for target.
-fileReader/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fileReader.dir/build.make CMakeFiles/fileReader.dir/build
-.PHONY : fileReader/fast
+client1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client1.dir/build.make CMakeFiles/client1.dir/build
+.PHONY : client1/fast
 
-fileReader.o: fileReader.cpp.o
+#=============================================================================
+# Target rules for targets named client2
 
-.PHONY : fileReader.o
+# Build rule for target.
+client2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client2
+.PHONY : client2
+
+# fast build rule for target.
+client2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client2.dir/build.make CMakeFiles/client2.dir/build
+.PHONY : client2/fast
+
+#=============================================================================
+# Target rules for targets named servermain
+
+# Build rule for target.
+servermain: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 servermain
+.PHONY : servermain
+
+# fast build rule for target.
+servermain/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/servermain.dir/build.make CMakeFiles/servermain.dir/build
+.PHONY : servermain/fast
+
+#=============================================================================
+# Target rules for targets named backendB
+
+# Build rule for target.
+backendB: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 backendB
+.PHONY : backendB
+
+# fast build rule for target.
+backendB/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendB.dir/build.make CMakeFiles/backendB.dir/build
+.PHONY : backendB/fast
+
+#=============================================================================
+# Target rules for targets named backendA
+
+# Build rule for target.
+backendA: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 backendA
+.PHONY : backendA
+
+# fast build rule for target.
+backendA/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendA.dir/build.make CMakeFiles/backendA.dir/build
+.PHONY : backendA/fast
+
+backend-serverA.o: backend-serverA.cpp.o
+
+.PHONY : backend-serverA.o
 
 # target to build an object file
-fileReader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fileReader.dir/build.make CMakeFiles/fileReader.dir/fileReader.cpp.o
-.PHONY : fileReader.cpp.o
+backend-serverA.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendA.dir/build.make CMakeFiles/backendA.dir/backend-serverA.cpp.o
+.PHONY : backend-serverA.cpp.o
 
-fileReader.i: fileReader.cpp.i
+backend-serverA.i: backend-serverA.cpp.i
 
-.PHONY : fileReader.i
+.PHONY : backend-serverA.i
 
 # target to preprocess a source file
-fileReader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fileReader.dir/build.make CMakeFiles/fileReader.dir/fileReader.cpp.i
-.PHONY : fileReader.cpp.i
+backend-serverA.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendA.dir/build.make CMakeFiles/backendA.dir/backend-serverA.cpp.i
+.PHONY : backend-serverA.cpp.i
 
-fileReader.s: fileReader.cpp.s
+backend-serverA.s: backend-serverA.cpp.s
 
-.PHONY : fileReader.s
+.PHONY : backend-serverA.s
 
 # target to generate assembly for a file
-fileReader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fileReader.dir/build.make CMakeFiles/fileReader.dir/fileReader.cpp.s
-.PHONY : fileReader.cpp.s
+backend-serverA.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendA.dir/build.make CMakeFiles/backendA.dir/backend-serverA.cpp.s
+.PHONY : backend-serverA.cpp.s
+
+backend-serverB.o: backend-serverB.cpp.o
+
+.PHONY : backend-serverB.o
+
+# target to build an object file
+backend-serverB.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendB.dir/build.make CMakeFiles/backendB.dir/backend-serverB.cpp.o
+.PHONY : backend-serverB.cpp.o
+
+backend-serverB.i: backend-serverB.cpp.i
+
+.PHONY : backend-serverB.i
+
+# target to preprocess a source file
+backend-serverB.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendB.dir/build.make CMakeFiles/backendB.dir/backend-serverB.cpp.i
+.PHONY : backend-serverB.cpp.i
+
+backend-serverB.s: backend-serverB.cpp.s
+
+.PHONY : backend-serverB.s
+
+# target to generate assembly for a file
+backend-serverB.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/backendB.dir/build.make CMakeFiles/backendB.dir/backend-serverB.cpp.s
+.PHONY : backend-serverB.cpp.s
+
+client1.o: client1.cpp.o
+
+.PHONY : client1.o
+
+# target to build an object file
+client1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client1.dir/build.make CMakeFiles/client1.dir/client1.cpp.o
+.PHONY : client1.cpp.o
+
+client1.i: client1.cpp.i
+
+.PHONY : client1.i
+
+# target to preprocess a source file
+client1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client1.dir/build.make CMakeFiles/client1.dir/client1.cpp.i
+.PHONY : client1.cpp.i
+
+client1.s: client1.cpp.s
+
+.PHONY : client1.s
+
+# target to generate assembly for a file
+client1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client1.dir/build.make CMakeFiles/client1.dir/client1.cpp.s
+.PHONY : client1.cpp.s
+
+client2.o: client2.cpp.o
+
+.PHONY : client2.o
+
+# target to build an object file
+client2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client2.dir/build.make CMakeFiles/client2.dir/client2.cpp.o
+.PHONY : client2.cpp.o
+
+client2.i: client2.cpp.i
+
+.PHONY : client2.i
+
+# target to preprocess a source file
+client2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client2.dir/build.make CMakeFiles/client2.dir/client2.cpp.i
+.PHONY : client2.cpp.i
+
+client2.s: client2.cpp.s
+
+.PHONY : client2.s
+
+# target to generate assembly for a file
+client2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client2.dir/build.make CMakeFiles/client2.dir/client2.cpp.s
+.PHONY : client2.cpp.s
+
+servermain.o: servermain.cpp.o
+
+.PHONY : servermain.o
+
+# target to build an object file
+servermain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/servermain.dir/build.make CMakeFiles/servermain.dir/servermain.cpp.o
+.PHONY : servermain.cpp.o
+
+servermain.i: servermain.cpp.i
+
+.PHONY : servermain.i
+
+# target to preprocess a source file
+servermain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/servermain.dir/build.make CMakeFiles/servermain.dir/servermain.cpp.i
+.PHONY : servermain.cpp.i
+
+servermain.s: servermain.cpp.s
+
+.PHONY : servermain.s
+
+# target to generate assembly for a file
+servermain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/servermain.dir/build.make CMakeFiles/servermain.dir/servermain.cpp.s
+.PHONY : servermain.cpp.s
 
 # Help Target
 help:
@@ -178,10 +338,26 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... fileReader"
-	@echo "... fileReader.o"
-	@echo "... fileReader.i"
-	@echo "... fileReader.s"
+	@echo "... backendA"
+	@echo "... backendB"
+	@echo "... client1"
+	@echo "... client2"
+	@echo "... servermain"
+	@echo "... backend-serverA.o"
+	@echo "... backend-serverA.i"
+	@echo "... backend-serverA.s"
+	@echo "... backend-serverB.o"
+	@echo "... backend-serverB.i"
+	@echo "... backend-serverB.s"
+	@echo "... client1.o"
+	@echo "... client1.i"
+	@echo "... client1.s"
+	@echo "... client2.o"
+	@echo "... client2.i"
+	@echo "... client2.s"
+	@echo "... servermain.o"
+	@echo "... servermain.i"
+	@echo "... servermain.s"
 .PHONY : help
 
 

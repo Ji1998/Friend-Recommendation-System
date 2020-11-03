@@ -1,3 +1,7 @@
 /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles/fileReader.dir
+/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles/client1.dir
+/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles/client2.dir
+/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles/servermain.dir
+/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles/backendB.dir
+/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/CMakeFiles/backendA.dir

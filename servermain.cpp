@@ -224,18 +224,6 @@ int main()
                 auto it = resultA.find(":");
                 string protocol = resultA.substr(0, it);
                 string messageAfterProtocol = resultA.substr(it+1);
-//        if(protocol == "replyList")                                                                               //splitof(+) between country names
-//        {
-//            string delimiter = "+";
-//            size_t pos = 0;
-//            string token;
-//            while ((pos = messageAfterProtocol.find(delimiter)) != string::npos) {
-//                token = messageAfterProtocol.substr(0, pos);
-//                cout << token << " ";
-//                messageAfterProtocol.erase(0, pos + delimiter.length());
-//            }
-//            cout << messageAfterProtocol << std::endl;
-//        }
                 if(protocol == "replyFriendInfo")
                 {
 
@@ -246,6 +234,11 @@ int main()
                     if(afterSeprator == "no_id")
                     {
                         cout << "The main server has received " << useridQueery << " not found " << "from server" << serverChoice << endl;
+                        cout << "The main server has sent the error to client using TCP over 32031" << endl;
+                    }
+                    else if(afterSeprator == "no_friend_None")
+                    {
+                        cout << "There is no new frined recommendation as it's the only user or it has connected with all other users" << endl;
                         cout << "The main server has sent the error to client using TCP over 32031" << endl;
                     }
                     else
@@ -261,102 +254,6 @@ int main()
             exit(0);
         } //EOF fork
     }
-
-//    inet_ntop(their_addr.ss_family, get_in_addr((struct sockaddr *)&their_addr), s, sizeof s);
-//    struct sockaddr_in clientInfo;                   //a struct saves the information of the other side
-//    memset(&clientInfo, 0, sizeof(clientInfo));
-//    int len = sizeof(clientInfo);
-//    getpeername(new_fd, (struct sockaddr *) &clientInfo, (socklen_t *) &len);   //return the information of the other side
-//    int clientPort = clientInfo.sin_port;
-
-    while(1)
-    {
-
-        //receive data from the client and process it to grab country name
-        char clientData [1000];
-        memset(clientData, 0, sizeof(clientData));
-        recv(new_fd, clientData, sizeof (clientData), 0);
-        //size_t clientDataSize = sizeof clientData / sizeof (char);
-        string clientDataStr_cliendid = clientData;
-        auto clientid_sep = clientDataStr_cliendid.find("=");
-        string clientID = clientDataStr_cliendid.substr(0, clientid_sep);
-        string clientDataStr = clientDataStr_cliendid.substr(clientid_sep+1);                                 //cast char array sent by client to string
-        auto colonSperator = clientDataStr.find(":");                                                           //query:country_name+id;
-        string afterQuery = clientDataStr.substr(colonSperator+1);                                             //country_name+id;
-        auto plusSeprator = afterQuery.find("+");
-        string countryQuery = afterQuery.substr(0,plusSeprator);                                                //country_name
-        string useridQueery = afterQuery.substr(plusSeprator+1);                                                //id
-        cout << "The Main server has received the request on User: " << useridQueery << " in " << countryQuery << endl;
-        if(countrysetA.count(countryQuery))
-        {
-            serverChoice = 'A';
-            cout << "country name" << countryQuery << " show up in server A" << endl;
-        }
-        else if(countrysetB.count(countryQuery))
-        {
-            serverChoice = 'B';
-            cout << "country name" << countryQuery << " show up in server B" << endl;
-        }
-        else {
-            string noCountryReply = "replyFriendInfo:not_country";
-            cout << "Country name doesn't show up" << endl;
-            cout << "the main server has sent " << countryQuery << " :NOT FOUND" << " to " << clientID << " using TCP over port 33031" << endl;
-            send(new_fd, noCountryReply.c_str(),noCountryReply.length(),0);
-            continue;
-        }
-        if(clientID == "client1")
-            cout << "The main server has received the request on User " << useridQueery << " in " << countryQuery << " from client1 using TCP over port 33031 " << endl;
-        if(clientID == "client2")
-            cout << "The main server has received the request on User " << useridQueery << " in " << countryQuery << " from client2 using TCP over port 33031 " << endl;
-
-        //do the recommendation
-        cout << "The main server has sent request from " << useridQueery << " to server " << serverChoice << " USING UDP over port 32031" << endl;
-        string resultA = reconmendation(clientData+clientid_sep+1,serverChoice, sizeof(clientData));
-        auto it = resultA.find(":");
-        string protocol = resultA.substr(0, it);
-        string messageAfterProtocol = resultA.substr(it+1);
-//        if(protocol == "replyList")                                                                               //splitof(+) between country names
-//        {
-//            string delimiter = "+";
-//            size_t pos = 0;
-//            string token;
-//            while ((pos = messageAfterProtocol.find(delimiter)) != string::npos) {
-//                token = messageAfterProtocol.substr(0, pos);
-//                cout << token << " ";
-//                messageAfterProtocol.erase(0, pos + delimiter.length());
-//            }
-//            cout << messageAfterProtocol << std::endl;
-//        }
-        if(protocol == "replyFriendInfo")
-        {
-
-            send(new_fd, resultA.c_str(), resultA.length(), 0);
-            string resultStr = resultA;
-            auto seperator = resultStr.find(":");                                                           //replyFriendInfo:625 not_country no_id
-            auto afterSeprator = resultStr.substr(seperator+1);
-            if(afterSeprator == "no_id")
-            {
-                cout << "The main server has received " << useridQueery << " not found " << "from server" << serverChoice << endl;
-                cout << "The main server has sent the error to client using TCP over 32031" << endl;
-            }
-            else
-            {
-                cout << "The main server has sent the searching results to client using TCP over 32031" << endl;
-            }
-
-        }
-        //send hello world to the client
-//        if (!fork()) { // this is the child process close(sockfd);
-//           close(sockfd); // child doesn't need listener
-//           if(send(new_fd, "hello, world!", 13, 0) == -1) perror("send error");
-//           close(new_fd);
-//           exit(0);
-//        }
-//        close(new_fd); // parent doesn't need this
-    }
-    close(new_fd);
-    return 0;
-
 }
 string reconmendation(char dataIn[], char ch, size_t dataInSize)
 {

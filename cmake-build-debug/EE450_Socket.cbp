@@ -37,8 +37,8 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="fileReader">
-				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/fileReader" prefix_auto="0" extension_auto="0"/>
+			<Target title="client1">
+				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/client1" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -52,14 +52,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 fileReader"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 client1"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="fileReader/fast">
-				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/fileReader" prefix_auto="0" extension_auto="0"/>
+			<Target title="client1/fast">
+				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/client1" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -73,15 +73,195 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 fileReader/fast"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 client1/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="client2">
+				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/client2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 client2"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="client2/fast">
+				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/client2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 client2/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="servermain">
+				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/servermain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 servermain"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="servermain/fast">
+				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/servermain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 servermain/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="backendB">
+				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/backendB" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 backendB"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="backendB/fast">
+				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/backendB" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 backendB/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="backendA">
+				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/backendA" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 backendA"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="backendA/fast">
+				<Option output="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/backendA" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 backendA/fast"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/fileReader.cpp">
-			<Option target="fileReader"/>
+		<Unit filename="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/backend-serverA.cpp">
+			<Option target="backendA"/>
+		</Unit>
+		<Unit filename="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/backend-serverB.cpp">
+			<Option target="backendB"/>
+		</Unit>
+		<Unit filename="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/client1.cpp">
+			<Option target="client1"/>
+		</Unit>
+		<Unit filename="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/client2.cpp">
+			<Option target="client2"/>
+		</Unit>
+		<Unit filename="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/servermain.cpp">
+			<Option target="servermain"/>
 		</Unit>
 		<Unit filename="/Users/Steven/Desktop/USC/2020Fall/EE450/socket_project/project_code/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
