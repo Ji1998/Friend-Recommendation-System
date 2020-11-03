@@ -10,15 +10,11 @@ client1: client1.cpp
 client2: client2.cpp
 	g++ client2.cpp -std=c++14 -o client2
 
-serverA: all
+
+serverA:
 	./backendA
 serverB:
 	./backendB
 mainserver:
 	./servermain
-client1:
-	./client1
-client2:
-	./client2
-
 
