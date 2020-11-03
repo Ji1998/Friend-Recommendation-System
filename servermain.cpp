@@ -24,7 +24,7 @@ using namespace :: std;
 
 //MACROS
 #define TCPPORT "33031"     //TCP port
-//#define UDPPORT "32031"		//UDP port
+#define UDPPORT_MAIN "32031"		//UDP port
 #define HOST "localhost"
 #define BACKLOG 10          //# of pending connecions queue
 
@@ -56,6 +56,45 @@ void *get_in_addr(struct sockaddr *sa){
 
 int main()
 {
+    //bind UDP port 32031 from BeeJ's
+    int UDPsockfd;
+    struct addrinfo UDPhints, *UDPserverinfo, *UDPp;
+    int UDPrv;
+    struct sockaddr_storage UDPtheir_addr;
+    socklen_t UDPaddr_len;
+
+    //set up UDP
+    memset(&UDPhints, 0, sizeof UDPhints);
+    UDPhints.ai_family = AF_UNSPEC; // don't care IPv4 or IPv6
+    UDPhints.ai_socktype = SOCK_DGRAM; // UDP dgram sockets
+    UDPhints.ai_flags = AI_PASSIVE; // use my IP
+
+    if ((UDPrv = getaddrinfo(NULL, UDPPORT_MAIN, &UDPhints, &UDPserverinfo)) != 0) {
+        fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(UDPrv));
+        return 1;
+    }
+
+    //loop through all structs to find the one can be connected
+    for (UDPp = UDPserverinfo; UDPp != NULL; UDPp = UDPp->ai_next) {
+        if ((UDPsockfd = socket(UDPp->ai_family, UDPp->ai_socktype, UDPp->ai_protocol))
+            == -1) {
+            perror("serverA: socket");
+            continue;
+        }
+        if (::bind(UDPsockfd, UDPp->ai_addr, UDPp->ai_addrlen) == -1) {
+            close(UDPsockfd);
+            perror("serverA: bind");
+            continue;
+        }
+        break;
+    }
+    if (UDPp == NULL) {
+        fprintf(stderr, "serverA: failed to bind socket\n");
+        return 2;
+    }
+    freeaddrinfo(UDPserverinfo);
+    /*----------------------------------------------------------------------------------*/
+
     //build TCP connection from Beej's
     int sockfd, new_fd; // listen on sock_fd, new connection on new_fd
     struct addrinfo hints, *servinfo, *p;
@@ -129,7 +168,7 @@ int main()
     size_t posB = 0;
 
     string tokenA;
-    cout << "The main server has received the country list from server A using UDP over port 30031" << endl;
+    cout << "The main server has received the country list from server A using UDP over port 32031" << endl;
     while ((posA = listBeforeSep_A.find(delimiter)) != string::npos) {
         tokenA = listBeforeSep_A.substr(0, posA);
         countrysetA.insert(tokenA);
@@ -137,6 +176,7 @@ int main()
     }
 
     string tokenB;
+    cout << "The main server has received the country list from server B using UDP over port 32031" << endl;
     while ((posB = listBeforeSep_B.find(delimiter)) != string::npos) {
         tokenB = listBeforeSep_B.substr(0, posB);
         countrysetB.insert(tokenB);
