@@ -92,7 +92,7 @@ int main()
         return 2;
     }
     freeaddrinfo(serverinfo);
-    cout << "The Server B is up and running using UDP on port 30031" << endl;
+    cout << "The Server B is up and running using UDP on port 31031" << endl;
 
 
     //read file
