@@ -274,16 +274,16 @@ int main()
                     if(afterSeprator == "no_id")
                     {
                         cout << "The main server has received " << useridQueery << " not found " << "from server" << serverChoice << endl;
-                        cout << "The main server has sent the error to client using TCP over 32031" << endl;
+                        cout << "The main server has sent the error to client using TCP over 33031" << endl;
                     }
                     else if(afterSeprator == "no_friend_None")
                     {
                         cout << "There is no new frined recommendation as it's the only user or it has connected with all other users" << endl;
-                        cout << "The main server has sent the error to client using TCP over 32031" << endl;
+                        cout << "The main server has sent the error to client using TCP over 33031" << endl;
                     }
                     else
                     {
-                        cout << "The main server has sent the searching results to client using TCP over 32031" << endl;
+                        cout << "The main server has sent the searching results to client using TCP over 33031" << endl;
                     }
 
                 } else break;
