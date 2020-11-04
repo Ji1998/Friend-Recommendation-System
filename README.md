@@ -14,7 +14,8 @@ Instruction on how to open the project:
 3. open mainserver.cpp
 4. open client1.cpp & client2.cpp
 
------Or you can use make file to compile all the .cpp file use make -all command and then run as the sequence mentioned above-----
+-----Or you can use make file to compile all the .cpp file using make -all command and then run as the sequence mentioned above-----
+
 
 File Functionality Description:
 client1.cpp: This is where the user will run and type in user id and contry name for query. It connect with main server through TCP
@@ -50,8 +51,13 @@ Running Condition:
 The mainserver won't deal with concurrent client request. i.e. if both client send to the main server simmutaneously, the server may reply the answer in the 
 wrong sequence to the client.
 
-Reused code:
-
+Reused code(all from Beej's):
+    servermain.cpp: build UDP connnection, build TCP connection(as shown in the comment in the file)
+    backend-serverA.cpp: UDP connection(as shown in the comment in the file)
+    backend-serverB.cpp: UDP connection(as shown in the comment in the file)
+    client1.cpp: UDP connection(as shown in the comment in the file)
+    client2.cpp: UDP connection(as shown in the comment file)
+    
   
   
   
