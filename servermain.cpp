@@ -214,7 +214,7 @@ int main()
         // enter child process
         if(!fork())
         {
-            cout << "enter child process: " << new_fd << endl;
+            //cout << "enter child process: " << new_fd << endl;
             while(1)
             {
 

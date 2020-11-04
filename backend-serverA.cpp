@@ -134,8 +134,8 @@ int main()
         string received = convertToString(buf, n);
         auto it = received.find(":");
         string receivedProtocol = received.substr(0, it);
-        cout << buf << endl;
-        cout << received << endl;
+//        cout << buf << endl;
+//        cout << received << endl;
         if(receivedProtocol == "countryList")                                                      //countryList:
         {
             string replyCountryList = "replyList:";
