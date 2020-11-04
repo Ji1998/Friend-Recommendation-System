@@ -129,7 +129,7 @@ int main()
     {
         char buf[MAXBUFLEN];
         size_t n = recvfrom(sockfd, buf, sizeof buf, 0, (struct sockaddr *) &their_addr, &addr_len);
-        cout << n << endl;
+       // cout << n << endl;
         //int buf_size = sizeof(buf) / sizeof(char);
         string received = convertToString(buf, n);
         auto it = received.find(":");
